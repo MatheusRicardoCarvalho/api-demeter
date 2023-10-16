@@ -1,0 +1,11 @@
+version: 0.2
+
+phases:
+  pre_build:
+    commands:
+      - echo Install packages...
+      - npm install
+artifacts:
+  base-directory: '.'
+  files:
+    - '**/*'
