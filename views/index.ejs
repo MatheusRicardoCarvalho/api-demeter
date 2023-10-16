@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina Incial</title>
+    <style>
+        /* CSS para tornar a tabela responsiva */
+        table {
+        width: 100%;
+        border-collapse: collapse;
+        border-spacing: 0;
+        }
+
+        th, td {
+        padding: 8px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+        }
+
+        /* Estilos para tornar a tabela responsiva em dispositivos móveis */
+        @media screen and (max-width: 600px) {
+        table, thead, tbody, th, td, tr {
+            display: block;
+        }
+
+        thead tr {
+            position: absolute;
+            top: -9999px;
+            left: -9999px;
+        }
+
+        tr {
+            margin-bottom: 15px;
+        }
+
+        td {
+            border: none;
+            border-bottom: 1px solid #ddd;
+            position: relative;
+            padding-left: 50%;
+        }
+
+        td:before {
+            position: absolute;
+            top: 6px;
+            left: 6px;
+            width: 45%;
+            padding-right: 10px;
+            white-space: nowrap;
+        }
+        }
+    </style>
+</head>
+<body>
+    <h1>Dados dos Sensores</h1>
+    <table id="table-sensores">
+        <thead>
+            <th>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Valor</th>
+                <th>Data</th>
+            </th>
+        </thead>
+        <tbody>
+            <% dados.forEach(function(sensor) { %>
+                <tr class="linhas">
+                    <td><%= sensor.id %></td>
+                    <td><%= sensor.nome %></td>
+                    <td><%= sensor.valor %></td>
+                    <td><%= sensor.createdAt %></td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+    
+    
+</body>
+<footer>
+    <script>
+    // Função para mostrar apenas as 10 últimas linhas da tabela
+        function mostrarUltimas10Linhas() {
+        var tabela = document.getElementById('table-sensores');
+        var linhas = tabela.getElementsByClassName('linhas');
+        var totalLinhas = linhas.length;
+
+        // Oculta todas as linhas da tabela
+        for (var i = 0; i < totalLinhas; i++) {
+            linhas[i].style.display = 'none';
+        }
+
+        // Exibe as últimas 10 linhas da tabela (exceto o cabeçalho)
+        for (var i = totalLinhas - 11; i < totalLinhas ; i++) {
+            linhas[i].style.display = '';
+        }
+        }
+
+        // Chama a função para mostrar as 10 últimas linhas quando a página é carregada
+        window.onload = mostrarUltimas10Linhas;
+    </script>
+</footer>
+</html>
