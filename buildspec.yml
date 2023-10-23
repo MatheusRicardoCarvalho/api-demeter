@@ -12,6 +12,10 @@ phases:
     commands:
       - echo Install packages...
       - npm install
+  build:
+    commands:
+      - echo Starting application...
+      - npm run start
 artifacts:
   base-directory: '.'
   files:
