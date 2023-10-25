@@ -4,8 +4,8 @@ const app = express();
 app.use(express.json()); 
 
 const Sequelize = require('sequelize')
-const sequelize = new Sequelize('aws', 'rootDemeter', 'demeter123', {
-    host: "localhost",
+const sequelize = new Sequelize('Demeter', 'demeter', '12345678', {
+    host: "awseb-e-9kpmnwhjbg-stack-awsebrdsdatabase-e2znhwhizbgl.cdezgrvslogt.sa-east-1.rds.amazonaws.com",
     dialect: "mysql"
 })
 
