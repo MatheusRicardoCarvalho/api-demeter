@@ -26,6 +26,7 @@ const Sensores = sequelize.define('sensores', {
         type: Sequelize.STRING
     }
 });
+Sensores.sync({ force: false });
 
 app.get('/', async (req, res) => {
     const query = `
