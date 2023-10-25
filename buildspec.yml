@@ -17,4 +17,3 @@ phases:
     commands:
       - echo Build completed on `date`
       - echo Starting the application...
-      - npm run start
