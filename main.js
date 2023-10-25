@@ -97,6 +97,8 @@ app.post('/sensor/temp', (req, res) => {
 
 
 //Inícia o serviço
-app.listen(8080, () => {
-    console.log('Servidor iniciado!');
+const PORT = process.env.PORT || 8080;
+
+app.listen(PORT, () => {
+    console.log(`Servidor iniciado na porta ${PORT}!`);
 });
