@@ -4,8 +4,8 @@ const app = express();
 app.use(express.json()); 
 
 const Sequelize = require('sequelize')
-const sequelize = new Sequelize('Demeter', 'demeter', '12345678', {
-    host: "awseb-e-9kpmnwhjbg-stack-awsebrdsdatabase-e2znhwhizbgl.cdezgrvslogt.sa-east-1.rds.amazonaws.com",
+const sequelize = new Sequelize('database_demeter', 'sigma_demeter', 'demeter123', {
+    host: "db4free.net",
     dialect: "mysql"
 })
 
@@ -97,7 +97,7 @@ app.post('/sensor/temp', (req, res) => {
 
 
 //Inícia o serviço
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 3000;
 // enviando novamente, novo username do github
 app.listen(PORT, () => {
     console.log(`Servidor iniciado na porta ${PORT}!`);
